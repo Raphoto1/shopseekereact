@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 function NavBarSeeker() {
   return (
-    <Navbar bg="dark" expand="lg" variant='dark'>
+    <Navbar fixed='top' bg="dark" expand="lg" variant='dark'>
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
