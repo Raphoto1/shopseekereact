@@ -8,7 +8,7 @@ function NavBarSeeker() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img src="./Assets/Icons/IconoR.png"
+            <img src="/Assets/Icons/IconoR.png"
               width="30"
               height="30"
               className="d-inline-block align-top"

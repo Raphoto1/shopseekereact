@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, getDoc, doc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,6 +34,14 @@ export default async function getDesigns() {
   });
   //mandamos la info
   return designsData;
+}
+
+export async function getSingleDesign(idParams){
+  const docRef = doc(DB, "designs", idParams);
+  const docSnapshot = await getDoc(docRef);
+  const designData = docSnapshot.data();
+  designData.id = docSnapshot.id;
+  return designData;
 }
 
 //Mandar mi data a firebase, dejo la funcion por si acaso a futuro la necesito

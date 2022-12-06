@@ -30,6 +30,7 @@ function DesignListContainer(props) {
           {designs.map((design) =>{
             return(<DesignCard
               key={design.id}
+              id={design.id}
               idInterno={design.idInterno}
               imgUrl={design.photo}
               title={design.title}

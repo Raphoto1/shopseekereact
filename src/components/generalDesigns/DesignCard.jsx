@@ -1,8 +1,10 @@
 import React from 'react'
-import { Col } from 'react-bootstrap';
+import { Button, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function DesignCard(props) {
+  const urlDetail = `/detail/${props.id}`
   return (
     <div className='col'>
       <Card className='h-100' style={{ width: '100%' }}>
@@ -12,6 +14,9 @@ function DesignCard(props) {
             <Card.Text>
               {props.desc}
             </Card.Text>
+            <Link to={urlDetail}>
+              <Button>Check Details</Button>
+            </Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Last updated 3 mins ago</small>
