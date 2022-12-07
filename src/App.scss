@@ -1,7 +1,13 @@
 @use "./styles/NavBar";
 @use "./styles/DetailedDesign";
-
+@use "./styles/designListContainer";
+@use "./styles/cartView";
 .cajaCarrousel{
     height: 50vh;
     width: auto;
+}
+.loaderGeneral{
+    display: flex;
+    margin-top: 50%;
+    margin-left: 50%;
 }

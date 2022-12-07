@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc, getDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, getDoc, doc , where, query } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,6 +34,39 @@ export default async function getDesigns() {
   });
   //mandamos la info
   return designsData;
+}
+
+export async function getDesignsByStyle(idCategory){
+  const collectionRef = collection(DB, "designs");
+  const queryCat = query(
+    collectionRef,
+    where("style", "==", idCategory)
+  );
+  const documentSnapshot = await getDocs(queryCat);
+  const documentData = documentSnapshot.docs.map((doc) => {
+    return{
+      ...doc.data(),
+      id:doc.id,
+    };
+  });
+  return documentData;
+}
+
+export async function getDesignsByShop(shop){
+  const collectionRef = collection(DB, "designs");
+  const queryCat = query(
+    collectionRef,
+    where(shop, "!=", "")
+  );
+  const documentSnapshot = await getDocs(queryCat);
+  const documentData = documentSnapshot.docs.map((doc) => {
+    return{
+      ...doc.data(),
+      id:doc.id,
+    };
+  });
+  console.log(documentData);
+  return documentData;
 }
 
 export async function getSingleDesign(idParams){
