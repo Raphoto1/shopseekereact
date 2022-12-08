@@ -1,8 +1,11 @@
 import React from 'react'
+import CheckOutDonation from './CheckOutDonation'
 
 function CheckOutContainer() {
   return (
-    <div>CheckOutContainer</div>
+    <div>
+      <CheckOutDonation></CheckOutDonation>
+    </div>
   )
 }
 

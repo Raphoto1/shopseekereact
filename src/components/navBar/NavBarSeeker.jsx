@@ -48,17 +48,17 @@ function NavBarSeeker() {
               </LinkContainer>
             </NavDropdown>
             <NavDropdown title="Filter By Shop" id="basic-nav-dropdown">
-              <LinkContainer to="/Shop/redbubble">
+              <LinkContainer to="/shop/shop1">
                 <NavDropdown.Item href="#action/3.1">
                   RedBubble
                 </NavDropdown.Item>
               </LinkContainer>
-              <LinkContainer to="/Shop/society6">
+              <LinkContainer to="/shop/shop2">
                 <NavDropdown.Item href="#action/3.2">
                     Society6
                 </NavDropdown.Item>
               </LinkContainer>
-              <LinkContainer to="/Shop/displate">
+              <LinkContainer to="/shop/shop3">
                 <NavDropdown.Item href="#action/3.3">
                   Displate
                 </NavDropdown.Item>

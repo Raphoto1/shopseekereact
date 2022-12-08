@@ -52,11 +52,11 @@ export async function getDesignsByStyle(idCategory){
   return documentData;
 }
 
-export async function getDesignsByShop(shop){
+export async function getDesignsByShop(idCategory){
   const collectionRef = collection(DB, "designs");
   const queryCat = query(
     collectionRef,
-    where(shop, "!=", "")
+    where(idCategory, "!=", "")
   );
   const documentSnapshot = await getDocs(queryCat);
   const documentData = documentSnapshot.docs.map((doc) => {
@@ -65,7 +65,6 @@ export async function getDesignsByShop(shop){
       id:doc.id,
     };
   });
-  console.log(documentData);
   return documentData;
 }
 
