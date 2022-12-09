@@ -2,6 +2,7 @@
 @use "./styles/DetailedDesign";
 @use "./styles/designListContainer";
 @use "./styles/cartView";
+@use "./styles/checkOut";
 .cajaCarrousel{
     height: 50vh;
     width: auto;
@@ -10,4 +11,10 @@
     display: flex;
     margin-top: 50%;
     margin-left: 50%;
+}
+.carousel .carousel-item img{
+    object-fit: cover;
+    object-position: center;
+    height: 50vh;
+    overflow: hidden;
 }

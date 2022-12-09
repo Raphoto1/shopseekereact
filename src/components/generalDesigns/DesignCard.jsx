@@ -28,8 +28,11 @@ function DesignCard(props) {
           </div>
           <h6>Each pice of love cost</h6>
           <Card.Text>{props.price}$</Card.Text>
+          
+            {props.stock <= 5 && <h3>5 or less left</h3>}
+          
           <Link to={urlDetail}>
-            <Button>Check Details</Button>
+            <Button variant={props.stock <= 5? "warning" : "primary"}>Check Details</Button>
           </Link>
         </Card.Body>
         <Card.Footer>

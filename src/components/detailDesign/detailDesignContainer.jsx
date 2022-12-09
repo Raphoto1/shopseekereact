@@ -17,14 +17,14 @@ function DetailDesignContainer() {
       setIsLoading(false);
     });
   }
+  
   useEffect(() => {
     getDesignsAsync();
   }, []);
 
   //Agregar condicional para loader
-  if (isLoading) return <Spinner className="loaderGeneral" animation="border" size="lg" role="status">
-    
-  </Spinner>
+  if (isLoading) return <Spinner className="loaderGeneral" animation="border" size="lg" role="status"/>
+
   return <div className="containerDetailedDesign">
     <DetailedDesign design={design}/>
   </div>

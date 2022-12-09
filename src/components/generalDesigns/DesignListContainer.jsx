@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { CardGroup } from "react-bootstrap";
+import { CardGroup, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import getDesigns, {
   getDesignsByStyle,
@@ -14,6 +14,7 @@ import DesignCard from "./DesignCard";
 function DesignListContainer(props) {
   //setear estados
   const [designs, setDesigns] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { idCategory } = useParams();
   //traer data
   async function getDesignsAsync() {
@@ -22,6 +23,7 @@ function DesignListContainer(props) {
       case "Traditional":
         let responseT = await getDesignsByStyle(idCategory);
         setDesigns(responseT);
+        setIsLoading(false);
         break;
       case "Digital":
         let responseD = await getDesignsByStyle(idCategory);
@@ -34,18 +36,22 @@ function DesignListContainer(props) {
       case "shop1":
         let responseS1 = await getDesignsByShop(idCategory);
         setDesigns(responseS1);
+        setIsLoading(false);
         break;
       case "shop2":
         let responseS2 = await getDesignsByShop(idCategory);
         setDesigns(responseS2);
+        setIsLoading(false);
         break;
       case "shop3":
         let responseS3 = await getDesignsByShop(idCategory);
         setDesigns(responseS3);
+        setIsLoading(false);
         break;
       default:
         let response0 = await getDesigns();
         setDesigns(response0);
+        setIsLoading(false);
         break;
     }
   }
@@ -53,7 +59,16 @@ function DesignListContainer(props) {
   useEffect(() => {
     getDesignsAsync();
   }, [idCategory]);
-
+  
+  if (isLoading)
+    return (
+      <Spinner
+        className="loaderGeneral"
+        animation="border"
+        size="lg"
+        role="status"
+      />
+    );
   return (
     <div>
       <CarrouselGeneral></CarrouselGeneral>

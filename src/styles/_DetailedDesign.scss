@@ -1,12 +1,27 @@
 .containerDetailedDesign{
     display: flex;
-    padding-top: 20%;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
     align-items: center;
     justify-content: center;
+    height: fit-content;
 }
+
 .cardDetailedDesign{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80vw;
+    .shop{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        height: 40%;
+        width: 100%;
+        img{
+          width: 50%;
+          height: auto;
+        }
+      }
 }

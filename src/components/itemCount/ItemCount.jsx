@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 
 function ItemCount({ stock, onAddToCart }) {
   //setear el estado de la cuenta
@@ -13,14 +14,14 @@ function ItemCount({ stock, onAddToCart }) {
   return (
     <div className="itemCountContainer">
       <div className="itemCountControl">
-        <button onClick={handleSubstract}>-</button>
+        <Button variant="danger" onClick={handleSubstract}>-</Button>
         <span>{count}</span>
-        <button onClick={handleAdd}>+</button>
+        <Button variant="success" onClick={handleAdd}>+</Button>
       </div>
       <div className="itemCountAddToCart">
-        <button onClick={() => onAddToCart(count)}>
+        <Button onClick={() => onAddToCart(count)}>
             Add To Cart
-        </button>
+        </Button>
       </div>
     </div>
   );

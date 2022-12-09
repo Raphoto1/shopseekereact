@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../Services/FirebaseData";
@@ -37,7 +38,7 @@ function CheckOutDonation() {
     setData(newData);
     console.log(newData);
   }
-  //submit ahndle
+  //submit handle
  function onSubmit(evt) {
     evt.preventDefault()
     console.log(data);
@@ -45,38 +46,45 @@ function CheckOutDonation() {
   }
 
   return (
-    <div>
+    <div className="checkOutGroup">
       <div className="checkOutInfo">
-        <h1>Total {priceInCart()}</h1>
-        <button>test de handle</button>
+        <h1>Total {priceInCart()}$</h1>
       </div>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          required
-          value={data.name}
-          name="name"
-          type="text"
-          onChange={onInputChange}
-        />
-        <label htmlFor="email">email</label>
-        <input
-          required
-          value={data.email}
-          name="email"
-          type="email"
-          onChange={onInputChange}
-        />
-        <label htmlFor="insta">Instagram</label>
-        <input
-          value={data.insta}
-          name="insta"
-          type="text"
-          onChange={onInputChange}
-        />
-        <button disabled={data.name === "" || data.email === ""} type="submit">
-          Send Love
-        </button>
+      <form className="checkOutForm" onSubmit={onSubmit}>
+        <div className="inputCheck">
+          <label htmlFor="name">Name</label>
+          <input
+            required
+            value={data.name}
+            name="name"
+            type="text"
+            onChange={onInputChange}
+          />
+        </div>
+        <div className="inputCheck">
+          <label htmlFor="email">email</label>
+          <input
+            required
+            value={data.email}
+            name="email"
+            type="email"
+            onChange={onInputChange}
+          />
+        </div>
+        <div className="inputCheck">
+          <label htmlFor="insta">Instagram</label>
+          <input
+            value={data.insta}
+            name="insta"
+            type="text"
+            onChange={onInputChange}
+          />
+        </div>
+        <div className="sendLove">
+          <Button disabled={data.name === "" || data.email === ""} type="submit">
+            Send Love
+          </Button>
+        </div>
       </form>
     </div>
   );
