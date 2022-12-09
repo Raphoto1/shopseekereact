@@ -76,6 +76,15 @@ export async function getSingleDesign(idParams){
   return designData;
 }
 
+//enviar data de user a fire
+
+export async function createOrder(contactData){
+  const collectionRef = collection(DB, "contactData");
+  const docContact = await addDoc(collectionRef, contactData);
+  console.log(docContact.id);
+  return docContact.id;
+}
+
 //Mandar mi data a firebase, dejo la funcion por si acaso a futuro la necesito
 
 export async function sendInfo() {

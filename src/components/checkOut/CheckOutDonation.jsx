@@ -1,38 +1,85 @@
-import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form';
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { cartContext } from "../../context/cartContext";
+import { createOrder } from "../../Services/FirebaseData";
 
 function CheckOutDonation() {
-    const [data, setData] = useState({
-        name: "",
-        email: "",
-        insta: "",
-    });
-
+  //Traigo info que necesito de context
+  const { cart, priceInCart, clearCart } = useContext(cartContext);
+  let navigate = useNavigate();
+  //funcion para mandar a fire o a futuro a paypal TESTEADO Y SI FUNCIONA
+  async function handleCheckout(data) {
+    //empaqueto lo que voy a mandar a fire
+    const order = {
+      buyer: data,
+      items: cart,
+      total: priceInCart(),
+      date: new Date(),
+    };
+    console.log(order);
+    //envio la info a fire
+    const orderId = await createOrder(order);
+    clearCart();
+    navigate(`/thankyou/${orderId}`);
+  }
+  //se guarda la info del usuario en un estado
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    insta: "",
+  });
+  //control de form
+  function onInputChange(evt) {
+    let nameInput = evt.target.name;
+    let value = evt.target.value;
+    let newData = { ...data };
+    newData[nameInput] = value;
+    setData(newData);
+    console.log(newData);
+  }
+  //submit ahndle
+ function onSubmit(evt) {
+    evt.preventDefault()
+    console.log(data);
+   handleCheckout(data);
+  }
 
   return (
     <div>
-        <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasic">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter Name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasic">
-        <Form.Label>@Instagram</Form.Label>
-        <Form.Control type="text" placeholder="Your @Instagram" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+      <div className="checkOutInfo">
+        <h1>Total {priceInCart()}</h1>
+        <button>test de handle</button>
+      </div>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="name">Name</label>
+        <input
+          required
+          value={data.name}
+          name="name"
+          type="text"
+          onChange={onInputChange}
+        />
+        <label htmlFor="email">email</label>
+        <input
+          required
+          value={data.email}
+          name="email"
+          type="email"
+          onChange={onInputChange}
+        />
+        <label htmlFor="insta">Instagram</label>
+        <input
+          value={data.insta}
+          name="insta"
+          type="text"
+          onChange={onInputChange}
+        />
+        <button disabled={data.name === "" || data.email === ""} type="submit">
+          Send Love
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default CheckOutDonation
+export default CheckOutDonation;
