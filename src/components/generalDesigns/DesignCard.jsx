@@ -10,7 +10,7 @@ function DesignCard(props) {
   return (
     <div className="col">
       <Card className="h-100" style={{ width: "100%" }}>
-        <LikeButton />
+        <LikeButton design={props.title}/>
         <Card.Img
           className="overfloe-auto"
           variant="top"
