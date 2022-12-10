@@ -1,3 +1,17 @@
+# Shop seeker
+
+This project is created to make easier to find my designs on my different shops, as a requierement of my course in CoderHouse they asked to create a shop, so, I decided to add some shop elements as send love like a donation.
+
+## Main NPM used
+
+"Bootstrap"
+"Sass"
+"React-Bootsrap"
+"Sweet Alert 2"
+"React-router"
+"React-router-bootstrap"
+"Firebase"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
