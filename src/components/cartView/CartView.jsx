@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Accordion, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import { cartContext } from "../../context/cartContext";
 import ToastRafa from "../extras/toastsAndAlerts/ToastRafa";
 
