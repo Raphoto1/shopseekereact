@@ -13,7 +13,7 @@ import DesignCard from "./DesignCard";
 
 function DesignListContainer(props) {
   //setear estados
-  const [designs, setDesigns] = useState([]);
+  const [designs, setDesigns] = useState([null]);
   const [isLoading, setIsLoading] = useState(true);
   const { idCategory } = useParams();
   //traer data
