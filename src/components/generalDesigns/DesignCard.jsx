@@ -36,6 +36,7 @@ function DesignCard(props) {
           </Link>
         </Card.Body>
         <Card.Footer>
+          <h6>Shops Available</h6>
           <LinkShops
             shop1={props.shop1}
             shop2={props.shop2}
