@@ -7,6 +7,14 @@
     height: 50vh;
     width: auto;
 }
+.favButton{
+    position: absolute;
+    display: flex;
+    right: 1%;
+    top: 1%;
+    background-color: transparent;
+    border: none;
+  }
 .loaderGeneral{
     display: flex;
     margin-top: 50%;
