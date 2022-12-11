@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { getSingleDesign } from "../../Services/FirebaseData";
-import DetailedDesign from "./DetailedDesign";
+import { getSingleDesign } from "../../../Services/FirebaseData";
+import DetailedDesign from "../DetailedDesign";
 
 function DetailDesignContainer() {
   //setear estados

@@ -2,7 +2,7 @@ import "./App.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarSeeker from "./components/navBar/NavBarSeeker";
 import DesignListContainer from "./components/generalDesigns/DesignListContainer";
-import DetailDesignContainer from "./components/detailDesign/DetailDesignContainer";
+import DetailDesignContainer from "./components/detailDesign/subForTest/DetailDesignContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorNav from "./components/extras/ErrorNav";
 import { CartContextProvider } from "./context/cartContext";
