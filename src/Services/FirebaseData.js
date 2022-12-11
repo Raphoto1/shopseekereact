@@ -68,6 +68,7 @@ export async function getDesignsByShop(idCategory){
   return documentData;
 }
 
+
 export async function getSingleDesign(idParams){
   const docRef = doc(DB, "designs", idParams);
   const docSnapshot = await getDoc(docRef);

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
 import { cartContext } from "../../context/cartContext";
-import LikeButton from "../extras/LikeButton";
+import LikeButton from "../extras/Buttons/LikeButton";
 import LinkShops from "../extras/LinkShops";
 import ToastRafa from "../extras/toastsAndAlerts/ToastRafa";
 import ItemCount from "../itemCount/ItemCount";

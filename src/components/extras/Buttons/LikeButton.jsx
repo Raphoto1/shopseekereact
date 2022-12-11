@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BalloonHeart, BalloonHeartFill } from 'react-bootstrap-icons';
-import ToastRafa from './toastsAndAlerts/ToastRafa';
+import ToastRafa from '../toastsAndAlerts/ToastRafa';
 
 function LikeButton(props) {
     const [isFavorite, setIsFavorite] = useState(false);
