@@ -12,7 +12,10 @@ import Thankyou from "./components/thankyou/Thankyou";
 
 function App() {
   return (
-    <>
+    <><head>
+      <title>::Rafael Martinez::</title>
+      <link rel="icon" type="image/jpg" href="./Assets/Icons/IconoR.png" />
+    </head>
       <CartContextProvider>
         <BrowserRouter>
           <NavBarSeeker />
