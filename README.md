@@ -2,6 +2,8 @@
 
 This project is created to make easier to find my designs on my different shops, as a requierement of my course in CoderHouse they asked to create a shop, so, I decided to add some shop elements as send love like a donation.
 
+[Netlify deploy](https://shopseekerrafaelmartinez.netlify.app/)
+
 ## Main NPM used
 
 "Bootstrap"
